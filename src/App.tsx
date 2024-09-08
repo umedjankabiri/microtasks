@@ -9,7 +9,7 @@ import {Button} from "common/components/Button/Button.tsx";
 import {DemonstrateUseState} from "common/components/DemonstrateUseState/DemonstrateUseState.tsx";
 import {Filter} from "common/components/Filter/Filter.tsx";
 import {FullInput} from "common/components/FullInput/FullInput.tsx";
-import {Input} from "common/Input/Input.tsx";
+import {Input} from "common/components/Input/Input.tsx";
 
 function App() {
     /* nested-component */
