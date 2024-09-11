@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NavWrapper = styled.div `
+const NavWrapper = styled.div `
     margin-left: 10px;
     font-size: 20px;
     
@@ -16,3 +16,7 @@ export const NavWrapper = styled.div `
         color: steelblue;
     }
 `
+
+export const sstl = {
+    NavWrapper
+}
