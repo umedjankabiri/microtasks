@@ -52,11 +52,11 @@ export const RoutingApp = () => {
                         <Route path={PATH.PAGE3} element={<PageThree/>}/>
 
                         <Route path={PATH.ERROR404} element={<Error404/>}/>
-                        <Route path={"/*"} element={<Navigate to={"/error404"}/>}/>
+                        <Route path={"/*"} element={<Error404/>}/>
                     </Routes>
                 </div>
             </div>
-            <div className={stl.footer}>abibas 2023</div>
+            <div className={stl.footer}>Pull&Bear 2024</div>
         </div>
     );
 };
