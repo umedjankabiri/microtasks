@@ -4,7 +4,7 @@ import {PageOne} from "common/components/Routing/Pages/PageOne.tsx";
 import {PageTwo} from "common/components/Routing/Pages/PageTwo.tsx";
 import {PageThree} from "common/components/Routing/Pages/PageThree.tsx";
 import {Error404} from "common/components/Routing/Error/Error404.tsx";
-import styled from "styled-components";
+import {NavWrapper} from "common/components/Routing/_styles.ts";
 
 export const RoutingApp = () => {
 
@@ -45,20 +45,3 @@ export const RoutingApp = () => {
         </div>
     );
 };
-
-const NavWrapper = styled.div `
-    margin-left: 10px;
-    font-size: 20px;
-    
-    & > a {
-        text-decoration: none;
-        color: #1e3786;
-    }
-    & > a.active {
-        text-decoration: none;
-        color: #03eaff;
-    }
-    & > a:hover {
-        color: steelblue;
-    }
-`
