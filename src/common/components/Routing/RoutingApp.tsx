@@ -4,7 +4,7 @@ import {PageOne} from "common/components/Routing/Pages/PageOne.tsx";
 import {PageTwo} from "common/components/Routing/Pages/PageTwo.tsx";
 import {PageThree} from "common/components/Routing/Pages/PageThree.tsx";
 import {Error404} from "common/components/Routing/Error/Error404.tsx";
-import {NavWrapper} from "common/components/Routing/_styles.ts";
+import {sstl} from "common/components/Routing/_styles.ts";
 
 export const RoutingApp = () => {
 
@@ -13,15 +13,15 @@ export const RoutingApp = () => {
             <div className={stl.header}><h1>HEADER</h1></div>
             <div className={stl.body}>
                 <div className={stl.nav}>
-                    <NavWrapper>
+                    <sstl.NavWrapper>
                         <NavLink to={"/Page1"}>Adidas</NavLink>
-                    </NavWrapper>
-                    <NavWrapper>
+                    </sstl.NavWrapper>
+                    <sstl.NavWrapper>
                         <NavLink to={"/Page2"}>Bershka</NavLink>
-                    </NavWrapper>
-                    <NavWrapper>
+                    </sstl.NavWrapper>
+                    <sstl.NavWrapper>
                         <NavLink to={"/Page3"}>Pull&Bear</NavLink>
-                    </NavWrapper>
+                    </sstl.NavWrapper>
                     <div>
                         <Link to={"/Page3"}>Pull&Bear with tag Link</Link>
                     </div>
