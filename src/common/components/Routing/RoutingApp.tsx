@@ -1,14 +1,14 @@
 import stl from "common/components/Routing/site.module.css"
-import {Link, Navigate, NavLink, Route, Routes} from "react-router-dom";
-import {PageOne} from "common/components/Routing/Pages/PageOne.tsx";
-import {PageTwo} from "common/components/Routing/Pages/PageTwo.tsx";
-import {PageThree} from "common/components/Routing/Pages/PageThree.tsx";
+import {Navigate, NavLink, Route, Routes} from "react-router-dom";
+import {Adidas} from "common/components/Routing/Pages/Adidas.tsx";
+import {PB} from "common/components/Routing/Pages/PB.tsx";
+import {Puma} from "common/components/Routing/Pages/Puma.tsx";
 import {Error404} from "common/components/Routing/Error/Error404.tsx";
 
 const PATH = {
-    PAGE1: '/page1',
-    PAGE2: '/page2',
-    PAGE3: '/page3',
+    ADIDAS: '/adidas',
+    PUMA: '/puma',
+    PB: '/pb',
     ERROR404: '/error404'
 } as const
 
@@ -22,34 +22,28 @@ export const RoutingApp = () => {
                     <div>
                         <NavLink
                             className={({isActive}) => isActive ? stl.activeNavLink : stl.navLink}
-                            to={PATH.PAGE1}
+                            to={PATH.ADIDAS}
                         >Adidas</NavLink>
                     </div>
                     <div>
                         <NavLink
                             className={({isActive}) => isActive ? stl.activeNavLink : stl.navLink}
-                            to={PATH.PAGE2}
-                        >Bershka</NavLink>
+                            to={PATH.PUMA}
+                        >Puma</NavLink>
                     </div>
                     <div>
                         <NavLink
                             className={({isActive}) => isActive ? stl.activeNavLink : stl.navLink}
-                            to={PATH.PAGE3}
+                            to={PATH.PB}
                         >Pull&Bear</NavLink>
-                    </div>
-                    <div>
-                        <Link to={PATH.PAGE3}>Pull&Bear with tag Link</Link>
-                    </div>
-                    <div>
-                        <a href={PATH.PAGE3}>Pull&Bear with tag a</a>
                     </div>
                 </div>
                 <div className={stl.content}>
                     <Routes>
-                        <Route path={"/"} element={<Navigate to={"/Page1"}/>}/>
-                        <Route path={PATH.PAGE1} element={<PageOne/>}/>
-                        <Route path={PATH.PAGE2} element={<PageTwo/>}/>
-                        <Route path={PATH.PAGE3} element={<PageThree/>}/>
+                        <Route path={"/"} element={<Navigate to={"/adidas"}/>}/>
+                        <Route path={PATH.ADIDAS} element={<Adidas/>}/>
+                        <Route path={PATH.PUMA} element={<Puma/>}/>
+                        <Route path={PATH.PB} element={<PB/>}/>
 
                         <Route path={PATH.ERROR404} element={<Error404/>}/>
                         <Route path={"/*"} element={<Error404/>}/>
