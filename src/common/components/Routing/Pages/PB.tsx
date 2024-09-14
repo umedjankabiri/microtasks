@@ -1,7 +1,7 @@
-export const PageTwo = () => {
+export const PB = () => {
     return (
         <div>
-            <h2>Bershka</h2>
+            <h2>Pull&Bear</h2>
             <p>
                 What is Lorem Ipsum?
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the

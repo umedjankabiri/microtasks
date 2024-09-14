@@ -1,4 +1,5 @@
-export const PageOne = () => {
+export const Adidas = () => {
+
     return (
         <div>
             <h2> ADIDAS</h2>
