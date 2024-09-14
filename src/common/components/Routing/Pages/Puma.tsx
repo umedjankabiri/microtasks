@@ -1,4 +1,30 @@
+import {SneakersItems} from "common/types/Routing/SneakerProps.ts";
+import adidasModel from "assets/adidas/adidas.webp";
+import pumaModel from "assets/puma/puma.webp";
+import pbRetro from "*.jpg";
+
 export const Puma = () => {
+    export const PumaSneakerModels: SneakersItems[] = [
+        {
+            model: 'ADIDAS',
+            collection: 'new collection',
+            price: '3500$',
+            picture: adidasModel,
+        },
+        {
+            model: 'PUMA',
+            collection: 'new collection',
+            price: '3300$',
+            picture: pumaModel
+        },
+        {
+            model: 'PULL&BEAR',
+            collection: 'new collection',
+            price: '180$',
+            picture: pbRetro
+        }
+    ]
+
     return (
         <div>
             <h2>Puma</h2>
