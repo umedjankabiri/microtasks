@@ -1,3 +1,4 @@
+import {FC} from "react";
 import {SneakersItems} from "common/types/Routing/SneakerProps.ts";
 import resizedPuma from "assets/puma/resizedPuma.webp";
 import resizedPumaCavern from "assets/puma/resizedPumaCavern.webp";
@@ -5,35 +6,39 @@ import resizedPumaXray from "assets/puma/resizedPumaXray.webp";
 import stl from "common/components/Routing/Pages/styles/sneakersStyles.module.css";
 import {Link} from "react-router-dom";
 
-export const Puma = () => {
-    const PumaSneakerModels: SneakersItems[] = [
-        {
-            model: 'PUMA',
-            collection: 'Daily',
-            price: '3500$',
-            picture: resizedPuma,
-        },
-        {
-            model: 'PUMA',
-            collection: 'Cavern',
-            price: '3300$',
-            picture: resizedPumaCavern
-        },
-        {
-            model: 'PUMA',
-            collection: 'X-ray',
-            price: '1080$',
-            picture: resizedPumaXray
-        }
-    ]
+export const PumaSneakerModels: SneakersItems[] = [
+    {
+        id: "p1",
+        model: 'PUMA',
+        collection: 'Daily',
+        price: '3500$',
+        picture: resizedPuma,
+    },
+    {
+        id: "p2",
+        model: 'PUMA',
+        collection: 'Cavern',
+        price: '3300$',
+        picture: resizedPumaCavern
+    },
+    {
+        id: "p3",
+        model: 'PUMA',
+        collection: 'X-ray',
+        price: '1080$',
+        picture: resizedPumaXray
+    }
+]
+
+export const Puma: FC = () => {
 
     return (
         <div className={stl.sneakerWrapper}>
             <h2>Puma</h2>
             <div className={stl.sneakerImage}>
                 {
-                    PumaSneakerModels.map((sneaker, index) =>
-                        <Link key={index} to={"/adidas/model"}>
+                    PumaSneakerModels.map(sneaker =>
+                        <Link key={sneaker.id} to={`/puma/${sneaker.id}`}>
                             <img src={sneaker.picture} alt={sneaker.model} title={sneaker.collection}/>
                         </Link>
                     )
