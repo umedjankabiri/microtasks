@@ -1,32 +1,33 @@
 import {FC} from "react";
 import {SneakersItems} from "common/types/Routing/SneakerProps.ts";
-import resizedAdidasAlpha from "assets/adidas/resizedAdidasAlpha.webp";
-import resizedAdidasRacer from "assets/adidas/resizedAdidasRacer.webp";
-import resizedAdidasDaily from "assets/adidas/resizedAdidasDaily.webp";
+import croppedAdidasAlpha from "assets/adidas/croppedAdidasAlpha.webp";
+import croppedAdidasRacer from "assets/adidas/croppedAdidasRacer.webp";
+import croppedAdidasDaily from "assets/adidas/croppedAdidasDaily.webp";
 import stl from "common/components/Routing/Pages/styles/sneakersStyles.module.css";
 import {Link} from "react-router-dom";
+import {PATH} from "common/components/Routing/Pages/RoutingApp.tsx";
 
-export const AdidasSneakerModels: SneakersItems[] = [
+export const adidasSneakerModels: SneakersItems[] = [
     {
-        id: "a1",
+        id: 1,
         model: 'ADIDAS',
         collection: 'Alpha',
         price: '2500$',
-        picture: resizedAdidasAlpha,
+        picture: croppedAdidasAlpha,
     },
     {
-        id: "a2",
+        id: 2,
         model: 'ADIDAS',
         collection: 'Racer',
         price: '2250$',
-        picture: resizedAdidasRacer
+        picture: croppedAdidasRacer
     },
     {
-        id: "a3",
+        id: 3,
         model: 'ADIDAS',
         collection: 'Daily',
         price: '1180$',
-        picture: resizedAdidasDaily
+        picture: croppedAdidasDaily
     }
 ]
 
@@ -37,8 +38,8 @@ export const Adidas: FC = () => {
             <h2>Adidas</h2>
             <div className={stl.sneakerImage}>
                 {
-                    AdidasSneakerModels.map(sneaker =>
-                        <Link key={sneaker.id} to={`/adidas/${sneaker.id}`}>
+                    adidasSneakerModels.map(sneaker =>
+                        <Link key={sneaker.id} to={`${PATH.ADIDAS}${PATH.MODEL}/${sneaker.id}`}>
                             <img src={sneaker.picture} alt={sneaker.model} title={sneaker.collection}/>
                         </Link>
                     )
