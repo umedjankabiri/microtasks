@@ -1,30 +1,36 @@
+import {FC} from "react";
 import {SneakersItems} from "common/types/Routing/SneakerProps.ts";
 import resizedPbRetro from "assets/pb/resizedPbRetro.webp";
 import resizedPbBasic from "assets/pb/resizedPbBasic.webp";
 import resizedPbKalin from "assets/pb/resizedPbKalin.webp";
 import stl from "common/components/Routing/Pages/styles/sneakersStyles.module.css";
+import {Link} from "react-router-dom";
 
-export const PB = () => {
-    const PbSneakerModels: SneakersItems[] = [
-        {
-            model: 'PULL&BEAR',
-            collection: 'Retro',
-            price: '3500$',
-            picture: resizedPbRetro,
-        },
-        {
-            model: 'PULL&BEAR',
-            collection: 'Basic',
-            price: '3300$',
-            picture: resizedPbBasic
-        },
-        {
-            model: 'PULL&BEAR',
-            collection: 'Kalin',
-            price: '180$',
-            picture: resizedPbKalin
-        }
-    ]
+export const PbSneakerModels: SneakersItems[] = [
+    {
+        id: "pb1",
+        model: 'PULL&BEAR',
+        collection: 'Retro',
+        price: '3500$',
+        picture: resizedPbRetro,
+    },
+    {
+        id: "pb2",
+        model: 'PULL&BEAR',
+        collection: 'Basic',
+        price: '3300$',
+        picture: resizedPbBasic
+    },
+    {
+        id: "pb3",
+        model: 'PULL&BEAR',
+        collection: 'Kalin',
+        price: '180$',
+        picture: resizedPbKalin
+    }
+]
+
+export const PB: FC = () => {
 
     return (
         <div className={stl.sneakerWrapper}>
@@ -32,7 +38,10 @@ export const PB = () => {
             <div className={stl.sneakerImage}>
                 {
                     PbSneakerModels.map(sneaker =>
-                        <img src={sneaker.picture} alt={sneaker.model} title={sneaker.collection}/>)
+                        <Link key={sneaker.id} to={`/pb/${sneaker.id}`}>
+                            <img src={sneaker.picture} alt={sneaker.model} title={sneaker.collection}/>
+                        </Link>
+                    )
                 }
             </div>
             <div className={stl.textInfo}>
