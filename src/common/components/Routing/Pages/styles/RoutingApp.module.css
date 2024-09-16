@@ -12,8 +12,8 @@
 
 .nav{
     background-color: white;
-    min-height: 400px;
-    width: 30%;
+    min-height: 100px;
+    width: 500px;
     color:#282c34;
     font-size: 30px;
 
@@ -22,7 +22,7 @@
 .content{
     background-color:#282c34;
     min-height: 400px;
-    width: 70%;
+    width: 90%;
     color: white;
     font-size: 30px;
 }
@@ -33,6 +33,7 @@
     height: 120px;
     text-align: center;
     color: white;
+    padding-top: 50px;
 }
 .navLink {
     color: #282c34;

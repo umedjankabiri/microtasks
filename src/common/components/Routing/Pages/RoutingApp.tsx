@@ -1,4 +1,4 @@
-import stl from "common/components/Routing/site.module.css"
+import stl from "common/components/Routing/Pages/styles/RoutingApp.module.css"
 import {Navigate, NavLink, Route, Routes} from "react-router-dom";
 import {Adidas} from "common/components/Routing/Pages/Adidas.tsx";
 import {PB} from "common/components/Routing/Pages/PB.tsx";
