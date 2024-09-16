@@ -1,32 +1,33 @@
 import {FC} from "react";
 import {SneakersItems} from "common/types/Routing/SneakerProps.ts";
-import resizedPuma from "assets/puma/resizedPuma.webp";
-import resizedPumaCavern from "assets/puma/resizedPumaCavern.webp";
-import resizedPumaXray from "assets/puma/resizedPumaXray.webp";
+import croppedPuma from "assets/puma/croppedPuma.webp";
+import croppedPumaCavern from "assets/puma/croppedPumaCavern.webp";
+import croppedPumaXray from "assets/puma/croppedPumaXray.webp";
 import stl from "common/components/Routing/Pages/styles/sneakersStyles.module.css";
 import {Link} from "react-router-dom";
+import {PATH} from "common/components/Routing/Pages/RoutingApp.tsx";
 
-export const PumaSneakerModels: SneakersItems[] = [
+export const pumaSneakerModels: SneakersItems[] = [
     {
-        id: "p1",
+        id: 1,
         model: 'PUMA',
         collection: 'Daily',
         price: '3500$',
-        picture: resizedPuma,
+        picture: croppedPuma,
     },
     {
-        id: "p2",
+        id: 2,
         model: 'PUMA',
         collection: 'Cavern',
         price: '3300$',
-        picture: resizedPumaCavern
+        picture: croppedPumaCavern
     },
     {
-        id: "p3",
+        id: 3,
         model: 'PUMA',
         collection: 'X-ray',
         price: '1080$',
-        picture: resizedPumaXray
+        picture: croppedPumaXray
     }
 ]
 
@@ -37,8 +38,8 @@ export const Puma: FC = () => {
             <h2>Puma</h2>
             <div className={stl.sneakerImage}>
                 {
-                    PumaSneakerModels.map(sneaker =>
-                        <Link key={sneaker.id} to={`/puma/${sneaker.id}`}>
+                    pumaSneakerModels.map(sneaker =>
+                        <Link key={sneaker.id} to={`${PATH.PUMA}${PATH.MODEL}/${sneaker.id}`}>
                             <img src={sneaker.picture} alt={sneaker.model} title={sneaker.collection}/>
                         </Link>
                     )
