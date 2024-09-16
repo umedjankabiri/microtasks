@@ -8,19 +8,19 @@ export const Adidas = () => {
     const AdidasSneakerModels: SneakersItems[] = [
         {
             model: 'ADIDAS',
-            collection: 'new collection',
+            collection: 'Alpha',
             price: '2500$',
             picture: resizedAdidasAlpha,
         },
         {
             model: 'ADIDAS',
-            collection: 'new collection',
+            collection: 'Racer',
             price: '2250$',
             picture: resizedAdidasRacer
         },
         {
             model: 'ADIDAS',
-            collection: 'new collection',
+            collection: 'Daily',
             price: '1180$',
             picture: resizedAdidasDaily
         }
@@ -32,7 +32,7 @@ export const Adidas = () => {
             <div className={stl.sneakerImage}>
                 {
                     AdidasSneakerModels.map((sneaker, index) =>
-                        <img key={index} src={sneaker.picture} alt={sneaker.model}/>)
+                        <img key={index} src={sneaker.picture} alt={sneaker.model} title={sneaker.collection}/>)
                 }
             </div>
             <div className={stl.textInfo}>
