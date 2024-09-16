@@ -14,7 +14,6 @@ export const DemonstrateMapMethod = (props: MappedStudents) => {
         </li>
     )
     })
-
     const mappedStudents = props.students.map((student) => {
         return (
             <li key={student.id}>
@@ -23,6 +22,7 @@ export const DemonstrateMapMethod = (props: MappedStudents) => {
         </li>
     )
     });
+
     return (
         <div>
             <ul>
