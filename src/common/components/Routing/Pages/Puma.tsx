@@ -3,24 +3,25 @@ import resizedPuma from "assets/puma/resizedPuma.webp";
 import resizedPumaCavern from "assets/puma/resizedPumaCavern.webp";
 import resizedPumaXray from "assets/puma/resizedPumaXray.webp";
 import stl from "common/components/Routing/Pages/styles/sneakersStyles.module.css";
+import {Link} from "react-router-dom";
 
 export const Puma = () => {
     const PumaSneakerModels: SneakersItems[] = [
         {
             model: 'PUMA',
-            collection: 'new collection',
+            collection: 'Daily',
             price: '3500$',
             picture: resizedPuma,
         },
         {
             model: 'PUMA',
-            collection: 'new collection',
+            collection: 'Cavern',
             price: '3300$',
             picture: resizedPumaCavern
         },
         {
             model: 'PUMA',
-            collection: 'new collection',
+            collection: 'X-ray',
             price: '1080$',
             picture: resizedPumaXray
         }
@@ -32,7 +33,10 @@ export const Puma = () => {
             <div className={stl.sneakerImage}>
                 {
                     PumaSneakerModels.map((sneaker, index) =>
-                        <img key={index} src={sneaker.picture} alt={sneaker.model}/>)
+                        <Link key={index} to={"/adidas/model"}>
+                            <img src={sneaker.picture} alt={sneaker.model} title={sneaker.collection}/>
+                        </Link>
+                    )
                 }
             </div>
             <div className={stl.textInfo}>
