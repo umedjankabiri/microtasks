@@ -1,5 +1,5 @@
 export type SneakersItems = {
-    id: string
+    id: number
     model: string;
     collection: string;
     price: string;
