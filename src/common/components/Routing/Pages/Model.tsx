@@ -1,12 +1,22 @@
 import { FC } from "react";
 import { useParams } from "react-router-dom";
 import { adidasSneakerModels } from "common/components/Routing/Pages/Adidas.tsx";
+import {pumaSneakerModels} from "common/components/Routing/Pages/Puma.tsx";
+import {pbSneakerModels} from "common/components/Routing/Pages/PB.tsx";
+import {ModelProps} from "common/types/Routing/ModelProps.ts";
 
-export const Model: FC = () => {
+const sneakersBrands = {
+    adidas: adidasSneakerModels,
+    puma: pumaSneakerModels,
+    pb: pbSneakerModels
+}
+
+export const Model: FC<ModelProps> = ({brands}) => {
     const {id} = useParams();
     const sneakerId = Number(id);
+    const currentBrand = sneakersBrands[brands]
 
-    const sneaker = adidasSneakerModels.find(sneaker => sneaker.id === sneakerId);
+    const sneaker = currentBrand.find(sneaker => sneaker.id === sneakerId);
     if (!sneaker) {
         return <h2>Модель не найдена</h2>;
     }
