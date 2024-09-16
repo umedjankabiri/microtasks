@@ -1,32 +1,33 @@
 import {FC} from "react";
 import {SneakersItems} from "common/types/Routing/SneakerProps.ts";
-import resizedPbRetro from "assets/pb/resizedPbRetro.webp";
-import resizedPbBasic from "assets/pb/resizedPbBasic.webp";
-import resizedPbKalin from "assets/pb/resizedPbKalin.webp";
+import croppedPbRetro from "assets/pb/croppedPbRetro.webp";
+import croppedPbBasic from "assets/pb/croppedPbBasic.webp";
+import croppedPbKalin from "assets/pb/croppedPbKalin.webp";
 import stl from "common/components/Routing/Pages/styles/sneakersStyles.module.css";
 import {Link} from "react-router-dom";
+import {PATH} from "common/components/Routing/Pages/RoutingApp.tsx";
 
-export const PbSneakerModels: SneakersItems[] = [
+export const pbSneakerModels: SneakersItems[] = [
     {
-        id: "pb1",
+        id: 1,
         model: 'PULL&BEAR',
         collection: 'Retro',
         price: '3500$',
-        picture: resizedPbRetro,
+        picture: croppedPbRetro,
     },
     {
-        id: "pb2",
+        id: 2,
         model: 'PULL&BEAR',
         collection: 'Basic',
         price: '3300$',
-        picture: resizedPbBasic
+        picture: croppedPbBasic
     },
     {
-        id: "pb3",
+        id: 3,
         model: 'PULL&BEAR',
         collection: 'Kalin',
         price: '180$',
-        picture: resizedPbKalin
+        picture: croppedPbKalin
     }
 ]
 
@@ -37,8 +38,8 @@ export const PB: FC = () => {
             <h2>Pull&Bear</h2>
             <div className={stl.sneakerImage}>
                 {
-                    PbSneakerModels.map(sneaker =>
-                        <Link key={sneaker.id} to={`/pb/${sneaker.id}`}>
+                    pbSneakerModels.map(sneaker =>
+                        <Link key={sneaker.id} to={`${PATH.PB}${PATH.MODEL}/${sneaker.id}`}>
                             <img src={sneaker.picture} alt={sneaker.model} title={sneaker.collection}/>
                         </Link>
                     )
