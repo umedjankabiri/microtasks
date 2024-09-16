@@ -47,9 +47,9 @@ export const RoutingApp = () => {
                         <Route path={PATH.ADIDAS} element={<Adidas/>}/>
                         <Route path={PATH.PUMA} element={<Puma/>}/>
                         <Route path={PATH.PB} element={<PB/>}/>
-                        <Route path={`${PATH.ADIDAS}${PATH.MODEL}${PATH.ID}`} element={<Model/>}/>
-                        <Route path={`${PATH.PUMA}${PATH.MODEL}${PATH.ID}`} element={<Model/>}/>
-                        <Route path={`${PATH.PB}${PATH.MODEL}${PATH.ID}`} element={<Model/>}/>
+                        <Route path={`${PATH.ADIDAS}${PATH.MODEL}${PATH.ID}`} element={<Model brands={"adidas"}/>}/>
+                        <Route path={`${PATH.PUMA}${PATH.MODEL}${PATH.ID}`} element={<Model brands={"puma"}/>}/>
+                        <Route path={`${PATH.PB}${PATH.MODEL}${PATH.ID}`} element={<Model brands={"pb"}/>}/>
 
                         <Route path={PATH.ERROR404} element={<Error404/>}/>
                         <Route path={"/*"} element={<Error404/>}/>
