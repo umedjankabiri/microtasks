@@ -6,7 +6,7 @@ export const Model: FC<ModelProps> = (props) => {
     return (
         <div>
             {
-                props.brand.map(sneaker =>
+                props.brands.map(sneaker =>
                     <div>
                         <div>{sneaker.model}</div>
                         <div>{sneaker.collection}</div>
