@@ -1,19 +1,27 @@
-import {FC} from "react";
-import {ModelProps} from "common/types/Routing/ModelProps.ts";
+import { FC } from "react";
+import { useParams } from "react-router-dom";
+import { adidasSneakerModels } from "common/components/Routing/Pages/Adidas.tsx";
 
-export const Model: FC<ModelProps> = (props) => {
+export const Model: FC = () => {
+    const {id} = useParams();
+    const sneakerId = Number(id);
+
+    const sneaker = adidasSneakerModels.find(sneaker => sneaker.id === sneakerId);
+    if (!sneaker) {
+        return <h2>Модель не найдена</h2>;
+    }
 
     return (
-        <div>
-            {
-                props.brands.map(sneaker =>
-                    <div>
-                        <div>{sneaker.model}</div>
-                        <div>{sneaker.collection}</div>
-                        <div>{sneaker.price}</div>
-                        <div>{sneaker.picture}</div>
-                    </div>
-                )}
+        <div style={{textAlign: "center"}}>
+            <h2>{sneaker.model}</h2>
+            <h4>{sneaker.collection}</h4>
+            <h3>{sneaker.price}</h3>
+            <img
+                src={sneaker.picture}
+                alt={sneaker.model}
+                title={sneaker.collection}
+                style={{width: "600px", height: "auto", marginRight: "10px"}}
+            />
         </div>
     );
 };
