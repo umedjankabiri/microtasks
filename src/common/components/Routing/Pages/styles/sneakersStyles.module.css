@@ -1,0 +1,23 @@
+.sneakerWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.sneakerImage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.sneakerImage img {
+    border-radius: 5px;
+    margin: 10px;
+    max-width: 30%;
+    object-fit: fill;
+}
+
+.textInfo {
+    font-weight: normal;
+    font-size: 18px;
+}
