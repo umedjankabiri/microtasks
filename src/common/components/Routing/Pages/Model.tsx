@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {ModelProps} from "common/types/Routing/Model/ModelProps.ts";
+import {ModelProps} from "common/types/Routing/ModelProps.ts";
 
 export const Model: FC<ModelProps> = (props) => {
 
