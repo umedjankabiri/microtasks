@@ -1,38 +1,47 @@
+import {FC} from "react";
 import {SneakersItems} from "common/types/Routing/SneakerProps.ts";
 import resizedAdidasAlpha from "assets/adidas/resizedAdidasAlpha.webp";
 import resizedAdidasRacer from "assets/adidas/resizedAdidasRacer.webp";
 import resizedAdidasDaily from "assets/adidas/resizedAdidasDaily.webp";
 import stl from "common/components/Routing/Pages/styles/sneakersStyles.module.css";
+import {Link} from "react-router-dom";
 
-export const Adidas = () => {
-    const AdidasSneakerModels: SneakersItems[] = [
-        {
-            model: 'ADIDAS',
-            collection: 'Alpha',
-            price: '2500$',
-            picture: resizedAdidasAlpha,
-        },
-        {
-            model: 'ADIDAS',
-            collection: 'Racer',
-            price: '2250$',
-            picture: resizedAdidasRacer
-        },
-        {
-            model: 'ADIDAS',
-            collection: 'Daily',
-            price: '1180$',
-            picture: resizedAdidasDaily
-        }
-    ]
+export const AdidasSneakerModels: SneakersItems[] = [
+    {
+        id: "a1",
+        model: 'ADIDAS',
+        collection: 'Alpha',
+        price: '2500$',
+        picture: resizedAdidasAlpha,
+    },
+    {
+        id: "a2",
+        model: 'ADIDAS',
+        collection: 'Racer',
+        price: '2250$',
+        picture: resizedAdidasRacer
+    },
+    {
+        id: "a3",
+        model: 'ADIDAS',
+        collection: 'Daily',
+        price: '1180$',
+        picture: resizedAdidasDaily
+    }
+]
+
+export const Adidas: FC = () => {
 
     return (
         <div className={stl.sneakerWrapper}>
             <h2>Adidas</h2>
             <div className={stl.sneakerImage}>
                 {
-                    AdidasSneakerModels.map((sneaker, index) =>
-                        <img key={index} src={sneaker.picture} alt={sneaker.model} title={sneaker.collection}/>)
+                    AdidasSneakerModels.map(sneaker =>
+                        <Link key={sneaker.id} to={`/adidas/${sneaker.id}`}>
+                            <img src={sneaker.picture} alt={sneaker.model} title={sneaker.collection}/>
+                        </Link>
+                    )
                 }
             </div>
             <div className={stl.textInfo}>
