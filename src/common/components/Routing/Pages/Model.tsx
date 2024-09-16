@@ -14,9 +14,8 @@ const sneakersBrands = {
 export const Model: FC<ModelProps> = ({brands}) => {
     const {id} = useParams();
     const sneakerId = Number(id);
-    const currentBrand = sneakersBrands[brands]
 
-    const sneaker = currentBrand.find(sneaker => sneaker.id === sneakerId);
+    const sneaker = sneakersBrands[brands].find(sneaker => sneaker.id === sneakerId);
     if (!sneaker) {
         return <h2>Модель не найдена</h2>;
     }
