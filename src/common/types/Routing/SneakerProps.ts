@@ -1,6 +1,6 @@
 export type SneakersItems = {
     id: number
-    model: string;
+    brand: string;
     collection: string;
     price: string;
     picture: string;
