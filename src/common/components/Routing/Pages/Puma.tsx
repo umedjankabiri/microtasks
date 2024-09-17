@@ -10,21 +10,21 @@ import {PATH} from "common/components/Routing/Pages/RoutingApp.tsx";
 export const pumaSneakerModels: SneakersItems[] = [
     {
         id: 1,
-        model: 'PUMA',
+        brand: 'PUMA',
         collection: 'Daily',
         price: '3500$',
         picture: croppedPuma,
     },
     {
         id: 2,
-        model: 'PUMA',
+        brand: 'PUMA',
         collection: 'Cavern',
         price: '3300$',
         picture: croppedPumaCavern
     },
     {
         id: 3,
-        model: 'PUMA',
+        brand: 'PUMA',
         collection: 'X-ray',
         price: '1080$',
         picture: croppedPumaXray
@@ -39,8 +39,8 @@ export const Puma: FC = () => {
             <div className={stl.sneakerImage}>
                 {
                     pumaSneakerModels.map(sneaker =>
-                        <Link key={sneaker.id} to={`${PATH.PUMA}${PATH.MODEL}/${sneaker.id}`}>
-                            <img src={sneaker.picture} alt={sneaker.model} title={sneaker.collection}/>
+                        <Link key={sneaker.id} to={`${PATH.PUMA}/${sneaker.id}`}>
+                            <img src={sneaker.picture} alt={sneaker.brand} title={sneaker.collection}/>
                         </Link>
                     )
                 }
