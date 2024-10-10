@@ -5,6 +5,7 @@ import {PB} from "common/components/Routing/Pages/PB.tsx";
 import {Puma} from "common/components/Routing/Pages/Puma.tsx";
 import {Error404} from "common/components/Routing/Error/Error404.tsx";
 import {Brand} from "common/components/Routing/Pages/Brand.tsx";
+import {Prices} from "common/components/Routing/Pages/Prices.tsx";
 
 export const PATH = {
     ID: "/:id",
@@ -12,6 +13,7 @@ export const PATH = {
     PUMA: "/puma",
     PB: "/pb",
     BRAND: "/brand",
+    PRICES: "/prices",
     ERROR404: "/error404"
 } as const
 
@@ -40,6 +42,12 @@ export const RoutingApp = () => {
                             to={PATH.PB}
                         >Pull&Bear</NavLink>
                     </div>
+                    <div>
+                        <NavLink
+                            className={({isActive}) => isActive ? stl.activeNavLink : stl.navLink}
+                            to={PATH.PRICES}
+                        >Prices</NavLink>
+                    </div>
                 </div>
                 <div className={stl.content}>
                     <Routes>
@@ -47,6 +55,7 @@ export const RoutingApp = () => {
                         <Route path={PATH.ADIDAS} element={<Adidas/>}/>
                         <Route path={PATH.PUMA} element={<Puma/>}/>
                         <Route path={PATH.PB} element={<PB/>}/>
+                        <Route path={PATH.PRICES} element={<Prices/>} />
                         <Route path={`/:brands/:id`} element={<Brand />}/>
 
                         <Route path={PATH.ERROR404} element={<Error404/>}/>
