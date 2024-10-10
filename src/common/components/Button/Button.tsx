@@ -6,8 +6,8 @@ export const Button = (props: ButtonProps) => {
     }
 
     return (
-        <button onClick={onClickHandler}>
-            {props.name}
+        <button className={props.className} onClick={onClickHandler}>
+            {props.children}
         </button>
     );
 };
