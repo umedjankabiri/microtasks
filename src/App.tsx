@@ -14,17 +14,17 @@ import {Input} from "common/components/Input/Input.tsx";
 function App() {
     /* nested-component */
     const students: StudentProps[] = [
-        {id: 1, collection: "James", age: 8},
-        {id: 2, collection: "Robert", age: 18},
-        {id: 3, collection: "John", age: 28},
-        {id: 4, collection: "Michael", age: 38},
-        {id: 5, collection: "William", age: 48},
-        {id: 6, collection: "David", age: 58},
-        {id: 7, collection: "Richard", age: 68},
-        {id: 8, collection: "Joseph", age: 78},
-        {id: 9, collection: "Thomas", age: 88},
-        {id: 10, collection: "Charles", age: 98},
-        {id: 11, collection: "Christopher", age: 100},
+        {id: 1, name: "James", age: 8},
+        {id: 2, name: "Robert", age: 18},
+        {id: 3, name: "John", age: 28},
+        {id: 4, name: "Michael", age: 38},
+        {id: 5, name: "William", age: 48},
+        {id: 6, name: "David", age: 58},
+        {id: 7, name: "Richard", age: 68},
+        {id: 8, name: "Joseph", age: 78},
+        {id: 9, name: "Thomas", age: 88},
+        {id: 10, name: "Charles", age: 98},
+        {id: 11, name: "Christopher", age: 100},
     ]
 
     /* button component */
@@ -110,10 +110,9 @@ function App() {
               <button onClick={(event) => foo2(100200)}>2</button>
           </div>
           <div>
-              <Button name={"My YouTube Channel 1"}
-                      onClick={() => ButtonFoo1("I am Vasiliy", 37, "I am living in Istanbul")}/>
-              <Button name={"My YouTube Channel 2"} onClick={() => ButtonFoo2("I am Ivan")}/>
-              <Button name={"Stupid Button"} onClick={ButtonFoo3}/>
+              <Button onClick={() => ButtonFoo1("I am Vasiliy", 37, "I am living in Istanbul")}>My YouTube Channel 1</Button>
+              <Button onClick={() => ButtonFoo2("I am Ivan")}>My YouTube Channel 2</Button>
+              <Button onClick={ButtonFoo3}>Stupid Button</Button>
           </div>
           <div>
               <DemonstrateUseState/>
@@ -132,12 +131,11 @@ function App() {
           <div>
               <div>Input component</div>
               <Input value={value} onChange={(event: string)=> setValue(event)}/>
-              <Button name="+" onClick={onClickButtonHandler}/>
+              <Button onClick={onClickButtonHandler}>+</Button>
               <ul>
                   {messages}
               </ul>
           </div>
-
       </div>
   )
 }
