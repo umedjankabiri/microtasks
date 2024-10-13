@@ -1,11 +1,6 @@
 import stl from "common/components/Routing/Pages/styles/routingApp.module.css"
-import {Navigate, NavLink, Route, Routes} from "react-router-dom";
-import {Adidas} from "common/components/Routing/Pages/Adidas.tsx";
-import {PB} from "common/components/Routing/Pages/PB.tsx";
-import {Puma} from "common/components/Routing/Pages/Puma.tsx";
-import {Error404} from "common/components/Routing/Error/Error404.tsx";
-import {Brand} from "common/components/Routing/Pages/Brand.tsx";
-import {Prices} from "common/components/Routing/Pages/Prices.tsx";
+import {NavLink} from "react-router-dom";
+import {Sneakers} from "common/components/Routing/Pages/Sneakers.tsx";
 
 export const PATH = {
     ID: "/:id",
@@ -50,17 +45,7 @@ export const RoutingApp = () => {
                     </div>
                 </div>
                 <div className={stl.content}>
-                    <Routes>
-                        <Route path={"/"} element={<Navigate to={"/adidas"}/>}/>
-                        <Route path={PATH.ADIDAS} element={<Adidas/>}/>
-                        <Route path={PATH.PUMA} element={<Puma/>}/>
-                        <Route path={PATH.PB} element={<PB/>}/>
-                        <Route path={PATH.PRICES} element={<Prices/>} />
-                        <Route path={`/:brands/:id`} element={<Brand />}/>
-
-                        <Route path={PATH.ERROR404} element={<Error404/>}/>
-                        <Route path={"/*"} element={<Error404/>}/>
-                    </Routes>
+                    <Sneakers />
                 </div>
             </div>
             <div className={stl.footer}>Pull&Bear 2024</div>
