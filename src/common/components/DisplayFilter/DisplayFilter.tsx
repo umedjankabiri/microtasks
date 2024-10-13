@@ -17,9 +17,9 @@ export const DisplayFilter = (props: DisplayFilterProps) => {
             <ul>
                 {mappedMoney}
             </ul>
-            <Button name={"All"} onClick={()=> props.onClick && props.onClick("All")}/>
-            <Button name={"Dollar"} onClick={()=> props.onClick && props.onClick("Dollar")}/>
-            <Button name={"Ruble"} onClick={()=> props.onClick && props.onClick("Ruble")}/>
+            <Button onClick={()=> props.onClick && props.onClick("All")}>All</Button>
+            <Button onClick={()=> props.onClick && props.onClick("Dollar")}>Dollar</Button>
+            <Button onClick={()=> props.onClick && props.onClick("Ruble")}>Ruble</Button>
         </div>
     );
 };
