@@ -1,6 +1,6 @@
 import {createBrowserRouter} from "react-router-dom";
-import {PATH, RoutingApp} from "common/components/Routing/Pages/RoutingApp.tsx";
-import {Error404} from "common/components/Routing/Error/Error404.tsx";
+import {PATH, RoutingApp} from "common/components/Routing/RoutingApp.tsx";
+import {Error404} from "common/components/Routing/Pages/Error/Error404.tsx";
 import React, {lazy, Suspense} from "react";
 
 const Adidas = lazy(() =>

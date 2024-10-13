@@ -5,7 +5,7 @@ import croppedPumaCavern from "assets/puma/croppedPumaCavern.webp";
 import croppedPumaXray from "assets/puma/croppedPumaXray.webp";
 import stl from "common/components/Routing/Pages/styles/sneakersStyles.module.css";
 import {Link} from "react-router-dom";
-import {PATH} from "common/components/Routing/Pages/RoutingApp.tsx";
+import {PATH} from "common/components/Routing/RoutingApp.tsx";
 
 export const pumaSneakerModels: SneakersItems[] = [
     {

@@ -5,7 +5,7 @@ import croppedPbBasic from "assets/pb/croppedPbBasic.webp";
 import croppedPbKalin from "assets/pb/croppedPbKalin.webp";
 import stl from "common/components/Routing/Pages/styles/sneakersStyles.module.css";
 import {Link} from "react-router-dom";
-import {PATH} from "common/components/Routing/Pages/RoutingApp.tsx";
+import {PATH} from "common/components/Routing/RoutingApp.tsx";
 
 export const pbSneakerModels: SneakersItems[] = [
     {
