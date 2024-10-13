@@ -5,6 +5,7 @@ import {Adidas} from "common/components/Routing/Pages/Adidas.tsx";
 import {PB} from "common/components/Routing/Pages/PB.tsx";
 import {Puma} from "common/components/Routing/Pages/Puma.tsx";
 import {Prices} from "common/components/Routing/Pages/Prices.tsx";
+import {Brand} from "common/components/Routing/Pages/Brand.tsx";
 
 export const Router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ export const Router = createBrowserRouter([
             {
                 path: PATH.PRICES,
                 element: <Prices/>
+            },
+            {
+                path: `${PATH.BRAND}${PATH.ID}`,
+                element: <Brand />
             }
         ]
     }
