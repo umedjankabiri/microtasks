@@ -1,15 +1,14 @@
 import stl from "common/components/Routing/Pages/styles/routingApp.module.css"
-import {NavLink} from "react-router-dom";
-import {Sneakers} from "common/components/Routing/Pages/Sneakers.tsx";
+import {NavLink, Outlet} from "react-router-dom";
 
 export const PATH = {
     ID: "/:id",
     ADIDAS: "/adidas",
     PUMA: "/puma",
     PB: "/pb",
-    BRAND: "/brand",
+    BRAND: "/:brands",
     PRICES: "/prices",
-    ERROR404: "/error404"
+    ERROR404: "/error404",
 } as const
 
 export const RoutingApp = () => {
@@ -45,7 +44,7 @@ export const RoutingApp = () => {
                     </div>
                 </div>
                 <div className={stl.content}>
-                    <Sneakers />
+                    <Outlet />
                 </div>
             </div>
             <div className={stl.footer}>Pull&Bear 2024</div>
