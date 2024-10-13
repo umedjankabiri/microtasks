@@ -1,10 +1,6 @@
 import {createRoot} from 'react-dom/client'
 import './index.css'
-import {BrowserRouter} from "react-router-dom";
-import {RoutingApp} from "common/components/Routing/Pages/RoutingApp.tsx";
+import {RouterProvider} from "react-router-dom";
+import {Router} from "common/components/Routing/Routes/Router.tsx";
 
-createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
-    <RoutingApp />
-  </BrowserRouter>,
-)
+createRoot(document.getElementById('root')!).render(<RouterProvider router={Router} />)
