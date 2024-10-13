@@ -14,8 +14,8 @@ export const DemonstrateUseState = () => {
     return (
         <div>
             <h1>{a}</h1>
-        <Button name={"Click me"} onClick={onClickButton}/>
-    <Button name={"0"} onClick={onClickZero}/>
+        <Button onClick={onClickButton}>Click me</Button>
+    <Button onClick={onClickZero}>0</Button>
     </div>
 );
 };
