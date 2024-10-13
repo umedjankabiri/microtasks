@@ -7,33 +7,57 @@ export const Prices: FC = () => {
     const sneakers = [
         {
             manufacturer: "Adidas",
-            name: "Adidas Yeezy Boost 350",
-            price: 300,
+            collection: "Adidas Alpha",
+            price: 2500,
             onSale: false
         },
         {
             manufacturer: "Adidas",
-            name: "Adidas Ultraboost 21",
-            price: 180,
+            collection: "Adidas Racer",
+            price: 2250,
+            onSale: true
+        },
+        {
+            manufacturer: "Adidas",
+            collection: "Adidas Daily",
+            price: 1180,
             onSale: true
         },
         {
             manufacturer: "Puma",
-            name: "Puma Suede Classic",
-            price: 65,
+            collection: "Puma Daily",
+            price: 3500,
             onSale: true
         },
         {
             manufacturer: "Puma",
-            name: "Puma RS-X",
-            price: 110,
+            collection: "Puma Cavern",
+            price: 3300,
             onSale: false
         },
         {
-            manufacturer: "Abibas",
-            name: "Abibas Alphabounce",
-            price: 60,
+            manufacturer: "Puma",
+            collection: "Puma X-ray",
+            price: 1080,
+            onSale: false
+        },
+        {
+            manufacturer: "PULL&BEAR",
+            collection: "PULL&BEAR Retro",
+            price: 3500,
             onSale: true
+        },
+        {
+            manufacturer: "PULL&BEAR",
+            collection: "PULL&BEAR Basic",
+            price: 3300,
+            onSale: true
+        },
+        {
+            manufacturer: "PULL&BEAR",
+            collection: "PULL&BEAR Kalin",
+            price: 1080,
+            onSale: false
         }
     ];
 
@@ -62,7 +86,7 @@ export const Prices: FC = () => {
                 <thead>
                 <tr>
                     <th className={stl.thStyle}>Manufacturer</th>
-                    <th className={stl.thStyle}>Name</th>
+                    <th className={stl.thStyle}>Collection</th>
                     <th className={stl.thStyle}>Price</th>
                     <th className={stl.thStyle}>On Sale</th>
                 </tr>
@@ -71,7 +95,7 @@ export const Prices: FC = () => {
                 {filteredSneakers.map((sneaker, index) => (
                     <tr key={index}>
                         <td className={stl.tdStyle}>{sneaker.manufacturer}</td>
-                        <td className={stl.tdStyle}>{sneaker.name}</td>
+                        <td className={stl.tdStyle}>{sneaker.collection}</td>
                         <td className={stl.tdStyle}>${sneaker.price}</td>
                         <td className={stl.tdStyle}>{sneaker.onSale ? 'Yes' : 'No'}</td>
                     </tr>
