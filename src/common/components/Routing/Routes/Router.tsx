@@ -1,6 +1,6 @@
 import {createBrowserRouter} from "react-router-dom";
-import {PATH, RoutingApp} from "common/components/Routing/Pages/RoutingApp.tsx";
-import {Error404} from "common/components/Routing/Error/Error404.tsx";
+import {PATH, RoutingApp} from "common/components/Routing/RoutingApp.tsx";
+import {Error404} from "common/components/Routing/Pages/Error/Error404.tsx";
 import {Adidas} from "common/components/Routing/Pages/Adidas.tsx";
 import {PB} from "common/components/Routing/Pages/PB.tsx";
 import {Puma} from "common/components/Routing/Pages/Puma.tsx";
@@ -10,9 +10,13 @@ import {Brand} from "common/components/Routing/Pages/Brand.tsx";
 export const Router = createBrowserRouter([
     {
         path: "/",
-        element: <RoutingApp />,
-        errorElement: <Error404 />,
+        element: <RoutingApp/>,
+        errorElement: <Error404/>,
         children: [
+            {
+                path: "/",
+                element: <Adidas/>
+            },
             {
                 path: PATH.ADIDAS,
                 element: <Adidas/>
@@ -31,7 +35,7 @@ export const Router = createBrowserRouter([
             },
             {
                 path: `${PATH.BRAND}${PATH.ID}`,
-                element: <Brand />
+                element: <Brand/>
             }
         ]
     }
