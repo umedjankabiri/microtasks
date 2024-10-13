@@ -1,6 +1,6 @@
 import './App.css'
 import {StudentProps} from "common/types/nested/StudentProps.ts";
-import {useState} from "react";
+import {useState, MouseEvent} from "react";
 import {Header} from "common/components/Header/Header.tsx";
 import {Body} from "common/components/Body/Body.tsx";
 import {Footer} from "common/components/Footer/Footer.tsx";
@@ -11,7 +11,7 @@ import {Filter} from "common/components/Filter/Filter.tsx";
 import {FullInput} from "common/components/FullInput/FullInput.tsx";
 import {Input} from "common/components/Input/Input.tsx";
 
-function App() {
+export function App() {
     /* nested-component */
     const students: StudentProps[] = [
         {id: 1, name: "James", age: 8},
@@ -28,7 +28,7 @@ function App() {
     ]
 
     /* button component */
-    const myFirstSubscriber = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const myFirstSubscriber = (_event: MouseEvent<HTMLButtonElement>) => {
         console.log("Hello I am Vasiliy")
     }
     const mySecondSubscriber = () => {
@@ -95,19 +95,19 @@ function App() {
           <div>
               <div style={{fontSize: "24px"}}>Button component</div>
               <br/><br/>
-              <button onClick={(event) => {
+              <button onClick={(_event) => {
                   console.log("Hello")
               }
               }>My YouTube Channel 1
               </button>
               <button onClick={myFirstSubscriber}>My YouTube Channel 2</button>
               <button onClick={mySecondSubscriber}>My YouTube Channel 3</button>
-              <button onClick={(event) => onClickHandler("Vasiliy")}>My YouTube Channel 4</button>
-              <button onClick={(event) => onClickHandler("Ivan")}>My YouTube Channel 5</button>
+              <button onClick={(_event) => onClickHandler("Vasiliy")}>My YouTube Channel 4</button>
+              <button onClick={(_event) => onClickHandler("Ivan")}>My YouTube Channel 5</button>
           </div>
           <div>
               <button onClick={foo1}>1</button>
-              <button onClick={(event) => foo2(100200)}>2</button>
+              <button onClick={(_event) => foo2(100200)}>2</button>
           </div>
           <div>
               <Button onClick={() => ButtonFoo1("I am Vasiliy", 37, "I am living in Istanbul")}>My YouTube Channel 1</Button>
@@ -140,4 +140,3 @@ function App() {
   )
 }
 
-export default App
