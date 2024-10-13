@@ -1,7 +1,6 @@
 import {createRoot} from 'react-dom/client'
 import './index.css'
 import {RouterProvider} from "react-router-dom";
-import {LazyRouter} from "common/components/Routing/Pages/LazyLoading.tsx";
+import {Router} from "common/components/Routing/Routes/Router.tsx";
 
-createRoot(document.getElementById('root')!).render(<RouterProvider router={LazyRouter} />)
-                                           
+createRoot(document.getElementById('root')!).render(<RouterProvider router={Router} />)
