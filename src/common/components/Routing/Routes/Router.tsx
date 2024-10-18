@@ -46,6 +46,10 @@ export const Router = createBrowserRouter([
             {
                 path: `${PATH.BRAND}${PATH.ID}`,
                 element: <Brand/>
+            },
+            {
+                path: '/*',
+                element: <Error404/>
             }
         ]
     }
