@@ -6,6 +6,7 @@ export const PATH = {
     ADIDAS: "/adidas",
     PUMA: "/puma",
     PB: "/pb",
+    PROTECTED: "/protected",
     BRAND: "/:brands",
     PRICES: "/prices",
     ERROR404: "/error404",
@@ -39,12 +40,18 @@ export const RoutingApp = () => {
                     <div>
                         <NavLink
                             className={({isActive}) => isActive ? stl.activeNavLink : stl.navLink}
+                            to={PATH.PROTECTED}
+                        >Protected</NavLink>
+                    </div>
+                    <div>
+                        <NavLink
+                            className={({isActive}) => isActive ? stl.activeNavLink : stl.navLink}
                             to={PATH.PRICES}
                         >Prices</NavLink>
                     </div>
                 </div>
                 <div className={stl.content}>
-                    <Outlet />
+                    <Outlet/>
                 </div>
             </div>
             <div className={stl.footer}>Pull&Bear 2024</div>
