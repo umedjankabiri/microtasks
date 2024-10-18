@@ -8,6 +8,7 @@ export const PATH = {
     PB: "/pb",
     PROTECTED_ROUTE: "/protected-route",
     PROTECTED_PAGE: "/protected-page",
+    LOGIN: "/login",
     BRAND: "/:brands",
     PRICES: "/prices",
     ERROR404: "/error404",
