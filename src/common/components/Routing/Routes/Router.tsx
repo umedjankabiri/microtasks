@@ -7,6 +7,7 @@ import {Puma} from "common/components/Routing/Pages/Puma.tsx";
 import {Prices} from "common/components/Routing/Pages/Prices.tsx";
 import {Brand} from "common/components/Routing/Pages/Brand.tsx";
 import {ProtectedPage} from "common/components/Routing/Pages/ProtectedPage.tsx";
+import {ProtectedRoute} from "common/components/Routing/Routes/ProtectedRoute.tsx";
 
 export const Router = createBrowserRouter([
     {
@@ -31,8 +32,12 @@ export const Router = createBrowserRouter([
                 element: <Puma/>
             },
             {
-                path: PATH.PROTECTED,
-                element: <ProtectedPage/>
+                path: PATH.PROTECTED_PAGE,
+                element: (
+                    <ProtectedRoute>
+                        <ProtectedPage/>
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: PATH.PRICES,
