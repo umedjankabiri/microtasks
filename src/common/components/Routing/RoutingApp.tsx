@@ -1,5 +1,6 @@
 import stl from "common/components/Routing/Pages/styles/routingApp.module.css"
-import {NavLink, Outlet} from "react-router-dom";
+import {Link, NavLink, Outlet, useNavigate} from "react-router-dom";
+import {Button} from "common/components/Button/Button.tsx";
 
 export const PATH = {
     ID: "/:id",
@@ -15,6 +16,10 @@ export const PATH = {
 } as const
 
 export const RoutingApp = () => {
+    const navigate = useNavigate()
+    const navigateHandler = () => {
+        navigate(-1)
+    }
 
     return (
         <div>
@@ -54,9 +59,10 @@ export const RoutingApp = () => {
                 </div>
                 <div className={stl.content}>
                     <div className={stl.HorizontalNavigation}>
-                        <NavLink className={({isActive}) => isActive ? stl.LinkLikeButton : ""} to={PATH.ADIDAS}>
+                        <Link to={PATH.ADIDAS} className={stl.LinkLikeButton}>Main page</Link>
+                        <Button className={stl.ButtonLikeLink} onClick={navigateHandler}>
                             Back
-                        </NavLink>
+                        </Button>
                     </div>
                     <Outlet/>
                 </div>
