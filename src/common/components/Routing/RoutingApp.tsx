@@ -53,6 +53,11 @@ export const RoutingApp = () => {
                     </div>
                 </div>
                 <div className={stl.content}>
+                    <div className={stl.HorizontalNavigation}>
+                        <NavLink className={({isActive}) => isActive ? stl.LinkLikeButton : ""} to={PATH.ADIDAS}>
+                            Back
+                        </NavLink>
+                    </div>
                     <Outlet/>
                 </div>
             </div>
